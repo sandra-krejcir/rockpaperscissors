@@ -39,13 +39,13 @@ function showAnimation() {
   console.log("function showAnimation()");
   document.querySelector("#player1").classList.add("shake");
   document.querySelector("#player2").classList.add("shake");
-  revealWinner();
+  document
+    .querySelector("#player2")
+    .addEventListener("animationend", revealWinner);
 }
 
 function revealWinner() {
   console.log("function revealWinner()");
-  document.querySelector("#player1").classList.remove("shake");
-  document.querySelector("#player2").classList.remove("shake");
   if (choiceUser === "rock") {
     document.querySelector("#player2").classList.add("rock");
     if (compChoice === 0) {
